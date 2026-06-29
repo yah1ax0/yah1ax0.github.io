@@ -87,7 +87,7 @@ const Home = () => {
               <span className="text-4xl">Hi Im Yahia Khidour</span>
               <TextType
                 className="text-4xl font-bold"
-                text={["Web Application Security Researcher", "Penetration Tester"]}
+                text={["Web Application Security", "Penetration Tester", "Security Researcher"]}
                 typingSpeed={150}
                 pauseDuration={1500}
                 showCursor={true}
