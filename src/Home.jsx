@@ -167,20 +167,6 @@ const Home = () => {
 
 
 
-            <div className="flex gap-32">
-              {developmentLogos.map((logo, index) => (
-                <motion.div
-                  key={index}
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <img src={logo.src} alt={logo.alt} className="w-20 h-20" />
-                </motion.div>
-              ))}
-            </div>
-
-
 
 
             <span className="text-2xl">Development</span>
@@ -275,15 +261,15 @@ const Home = () => {
             <div className="flex flex-col gap-5 ">
               <p className="max-w-[900px] text-lg">
 
-                I specialize in identifying and exploiting real-world web application vulnerabilities through manual security testing, bug bounty hunting, and security research. My work focuses on authentication, authorization, business logic flaws, API security, account takeover, and the OWASP Top 10. I have responsibly disclosed multiple vulnerabilities to major organizations, including a Critical finding for Glassdoor, and received security acknowledgments from Apple and Sony.
+I specialize in identifying and exploiting real-world web application vulnerabilities through manual security testing, AI-assisted workflows, bug bounty hunting, and security research. My expertise includes client-side attacks, JavaScript debugging and analysis, authentication and authorization testing, business logic vulnerabilities, API security, account takeover, and the OWASP Top 10 risks.
 
-                Alongside offensive security, I build automation <span className="font-semibold">My Hackerone Account: <a className="font-bold" href="https://hackerone.com/idkwhoiamx999">Hacker One</a></span>
-              <span className="font-semibold">Apple Hall Of Fame In Décembre 2023 Yahya Khidour (Dz): <a className="font-bold" href="https://support.apple.com/fr-cm/122162">Apple</a></span> tools that streamline reconnaissance, testing, and repetitive security tasks, allowing me to work more efficiently while continuously expanding my technical skills.
+Alongside offensive security, I build automation tools and Bash scripts that streamline reconnaissance, testing, and repetitive security tasks, allowing me to work more efficiently while continuously expanding my technical skills. Combined with my full-stack development background, this enables me to understand applications from both a developer's and an attacker's perspective.
+
               </p>
             </div>
 
 
-            <span className="font-semibold">My Hackerone Account: <a className="font-bold" href="https://hackerone.com/idkwhoiamx999">Hacker One</a></span>
+            <span className="font-semibold">My Hackerone Account: <a className="font-bold" href="https://hackerone.com/hunterxhunter_">Hacker One</a></span>
             <span className="font-semibold">Apple Hall Of Fame In Décembre 2023 Yahya Khidour (Dz): <a className="font-bold" href="https://support.apple.com/fr-cm/122162">Apple</a></span>
 
 

@@ -82,9 +82,9 @@ const Navbar = () => {
 
         <div className="flex gap-4">
           
-<a href="tel:+213556042818" className="flex items-center gap-2">
+{/* <a href="tel:+213556042818" className="flex items-center gap-2">
   <FiPhone className="w-6 h-6"/>
-</a>
+</a> */}
 
 
           <Link to='https://www.linkedin.com/in/yahia-khidour-9254a0256/'>
@@ -92,15 +92,15 @@ const Navbar = () => {
           </Link>
 
 
-          <Link to='https://github.com/Ykx7/'>
+          <Link to='https://github.com/idkwhoiamx999/'>
             <FiGithub className="w-6 h-6"/>
           </Link>
 
-          <Link to='https://x.com/7xOneeeeeeeee9'>
+          <Link to='https://x.com/idkwhoiamx999'>
             <FiTwitter className="w-6 h-6" />
           </Link>
 
-          <Link to='https://hackerone.com/idkwhoiamx999?type=user'>
+          <Link to='https://hackerone.com/hunterxhunter_?type=user'>
             <SiHackerone className="w-6 h-6"/>
           </Link>
 
