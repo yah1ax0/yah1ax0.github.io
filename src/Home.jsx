@@ -3,6 +3,7 @@ import img from "./assets/images/img9.jpg"
 import proimg1 from "./assets/images/proimage1.png"
 import proimg2 from "./assets/images/proimage2.png"
 import proimg3 from "./assets/images/proimage3.png"
+import proimg4 from "./assets/images/proimage4.png"
 import TextType from "@/components/TextType"
 import { motion } from "framer-motion"
 import PageWrapper from "@/components/PageWrapper"
@@ -54,7 +55,7 @@ const Home = () => {
       icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye-icon lucide-eye"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg>'
     },
     {
-      title: 'Mini Ecommerce Web Application', tech: ['Vite', 'Tailwind', 'Nodejs', 'Express', 'MongoDB'], images: [proimg2, ''], livelink: 'https://yahiastore.netlify.app/', githublink: '',
+      title: 'MY BLOGPOST IN MEDUIEM', images: [proimg4, ''], livelink: 'https://idkwhoiamx999.medium.com/', githublink: '',
       icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye-icon lucide-eye"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg>'
     },
     {
@@ -307,9 +308,47 @@ Alongside offensive security, I build automation tools and Bash scripts that str
           <section id="contact" className="h-screen flex flex-col items-center justify-center gap-6">
             <span className="text-4xl font-bold">Contact</span>
 
-            <div>
+
+
+
+
+        <div className="flex gap-4">
+          
+{/* <a href="tel:+213556042818" className="flex items-center gap-2">
+  <FiPhone className="w-6 h-6"/>
+</a> */}
+
+
+          <Link to='https://www.linkedin.com/in/yahia-khidour-9254a0256/'>
+            <SlSocialLinkedin className="w-6 h-6"/>
+          </Link>
+
+
+          <Link to='https://github.com/idkwhoiamx999/'>
+            <FiGithub className="w-6 h-6"/>
+          </Link>
+
+          <Link to='https://x.com/idkwhoiamx999'>
+            <FiTwitter className="w-6 h-6" />
+          </Link>
+
+          <Link to='https://hackerone.com/hunterxhunter_?type=user'>
+            <SiHackerone className="w-6 h-6"/>
+          </Link>
+
+
+
+
+
+        </div>
+
+
+
+
+            {/* <div>
               <Contact />
-            </div>
+            </div> */}
+
 
           </section>
 
