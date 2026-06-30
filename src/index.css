@@ -2,31 +2,88 @@
 @tailwind components;
 @tailwind utilities;
 
-
-@layer{
+@layer {
   .container {
     @apply px-[30px] mx-auto;
   }
+
   .element-center {
     @apply flex items-center justify-center flex-col;
   }
 }
 
-
-html{
+html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 }
-
 
 body {
   font-family: 'Roboto', sans-serif;
   background-color: white;
   width: 100%;
+  @apply antialiased;
 }
 
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
 
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
 
+::-webkit-scrollbar-thumb {
+  background: #b5becb;
+  border-radius: 5px;
+}
 
+::-webkit-scrollbar-thumb:hover {
+  background: #cacfdb;
+}
+
+/* Smooth animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.6s ease-out;
+}
+
+/* Better link styling */
+a {
+  @apply transition-colors duration-300;
+}
+
+/* Selection color */
+::selection {
+  @apply bg-blue-600 text-white;
+}
 
 @layer base {
   :root {
@@ -56,6 +113,7 @@ body {
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
   }
+
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
@@ -82,16 +140,11 @@ body {
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
-}
 
-
-
-
-
-@layer base {
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }

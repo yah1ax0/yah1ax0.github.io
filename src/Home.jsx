@@ -1,362 +1,415 @@
 import Navbar from "@/components/Navbar"
 import img from "./assets/images/img9.jpg"
 import proimg1 from "./assets/images/proimage1.png"
-import proimg2 from "./assets/images/proimage2.png"
 import proimg3 from "./assets/images/proimage3.png"
 import proimg4 from "./assets/images/proimage4.png"
 import TextType from "@/components/TextType"
 import { motion } from "framer-motion"
 import PageWrapper from "@/components/PageWrapper"
 import { Button } from "@/components/ui/button"
-import { Link } from "react-router-dom"
-import { Eye } from "lucide-react"
-import { FiGithub } from "react-icons/fi";
-import { AiOutlineEye } from "react-icons/ai";
-import Contact from "@/components/Contact"
-
+import {  FiTwitter, FiGithub } from "react-icons/fi"
+import { AiOutlineEye } from "react-icons/ai"
+import { MdOutlineEmail } from "react-icons/md";
+import { SlSocialLinkedin } from "react-icons/sl"
+import { SiHackerone } from "react-icons/si"
 
 const Home = () => {
-
-
-  const MotionButton = motion(Button)
-
-
+  const MotionButton = motion.create(Button)
 
   const securityLogos = [
-    { src: "https://www.kali.org/images/tool-logo-wireshark.svg", alt: "Company 1", href: "https://www.kali.org/images/tool-logo-wireshark.svg" },
-    { src: "https://www.kali.org/images/tool-logo-burp.svg", alt: "Company 2" },
-    { src: "https://www.kali.org/images/tool-logo-nmap.svg", alt: "Company 3" },
-    { src: "https://www.kali.org/tools/sqlmap/images/sqlmap-logo.svg", alt: "Company 4" },
-    { src: "https://www.kali.org/images/tool-logo-ffuf.svg", alt: "Company 5" },
-    { src: "https://www.vectorlogo.zone/logos/google_chrome/google_chrome-icon.svg", alt: "Company 6" },
-
-    // { src: "https://www.vectorlogo.zone/logos/hackerone/hackerone-ar21.svg", alt: "Company 7"},
-  ];
-
+    { src: "https://www.kali.org/images/tool-logo-wireshark.svg", alt: "Wireshark" },
+    { src: "https://www.kali.org/images/tool-logo-burp.svg", alt: "Burp Suite" },
+    { src: "https://www.kali.org/images/tool-logo-nmap.svg", alt: "Nmap" },
+    { src: "https://www.kali.org/tools/sqlmap/images/sqlmap-logo.svg", alt: "SQLMap" },
+    { src: "https://www.kali.org/images/tool-logo-ffuf.svg", alt: "FFUF" },
+    { src: "https://www.vectorlogo.zone/logos/google_chrome/google_chrome-icon.svg", alt: "Chrome DevTools" },
+  ]
 
   const developmentLogos = [
-    { src: "https://www.vectorlogo.zone/logos/reactjs/reactjs-icon.svg", alt: "Company 1" },
-    { src: "https://www.vectorlogo.zone/logos/vitejsdev/vitejsdev-icon.svg", alt: "Company 2" },
-    { src: "https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg", alt: "Company 3" },
-    { src: "https://www.vectorlogo.zone/logos/nodejs/nodejs-icon.svg", alt: "Company 4" },
-    // { src: "https://www.vectorlogo.zone/logos/expressjs/expressjs-ar21.svg", alt: "Company 5"},
-    { src: "https://www.vectorlogo.zone/logos/github/github-icon.svg", alt: "Company 6" },
-    { src: "https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg", alt: "Company 7" },
-    { src: "https://www.vectorlogo.zone/logos/cloudflare/cloudflare-icon.svg", alt: "Company 7" },
-
-    // { src: "https://www.vectorlogo.zone/logos/hackerone/hackerone-ar21.svg", alt: "Company 7"},
-  ];
-
-
+    { src: "https://www.vectorlogo.zone/logos/reactjs/reactjs-icon.svg", alt: "React" },
+    { src: "https://www.vectorlogo.zone/logos/vitejsdev/vitejsdev-icon.svg", alt: "Vite" },
+    { src: "https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg", alt: "Tailwind CSS" },
+    { src: "https://www.vectorlogo.zone/logos/nodejs/nodejs-icon.svg", alt: "Node.js" },
+    { src: "https://www.vectorlogo.zone/logos/github/github-icon.svg", alt: "GitHub" },
+    { src: "https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg", alt: "Git" },
+    { src: "https://www.vectorlogo.zone/logos/cloudflare/cloudflare-icon.svg", alt: "Cloudflare" },
+  ]
 
   const ProjectsArray = [
     {
-      title: 'Ecommerce Web Application With Full Features', tech: ['React', 'Tailwind', 'Nodejs', 'Express', 'MongoDB'], images: [proimg1, ''], livelink: 'https://yahia-shop.netlify.app', githublink: '',
-      icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye-icon lucide-eye"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg>'
+      title: 'Ecommerce Web Application',
+      description: 'Full-featured e-commerce platform with cart, checkout, and payment integration',
+      tech: ['React', 'Tailwind', 'Node.js', 'Express', 'MongoDB'],
+      images: [proimg1],
+      livelink: 'https://yahia-shop.netlify.app',
+      githublink: '',
     },
     {
-      title: 'MY BLOGPOST IN MEDUIEM', images: [proimg4, ''], livelink: 'https://idkwhoiamx999.medium.com/', githublink: '',
-      icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye-icon lucide-eye"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg>'
+      title: 'My Security Articles',
+      description: 'In-depth blog posts on web security vulnerabilities and penetration testing techniques',
+      tech: ['Medium', 'Security'],
+      images: [proimg4],
+      livelink: 'https://idkwhoiamx999.medium.com/',
+      githublink: '',
     },
     {
-      title: 'My Portfolio', tech: ['Vite', 'Tailwind', 'Framer Motion', 'Shadcn'], images: [proimg3, ''], livelink: 'https://yahiaportfolio.netlify.app', githublink: 'https://github.com/Ykx7/Portfolio',
-      icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye-icon lucide-eye"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg>'
+      title: 'Portfolio Website',
+      description: 'Modern, responsive portfolio showcasing projects and security expertise',
+      tech: ['React', 'Vite', 'Tailwind', 'Framer Motion'],
+      images: [proimg3],
+      livelink: 'https://yahiaportfolio.netlify.app',
+      githublink: 'https://github.com/Ykx7/Portfolio',
     },
-
-
-
-
-
   ]
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3,
+      },
+    },
+  }
 
-
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
+  }
 
   return (
     <PageWrapper>
-      <div>
-
+      <div className="bg-gradient-to-b from-white via-slate-50 to-white">
         <nav>
           <Navbar />
         </nav>
 
-
         <div>
-
-          <section id="overview" className="h-screen flex items-center justify-between px-64">
-            <div className="flex flex-col gap-2">
-              <span className="text-4xl">Hi Im Yahia Khidour</span>
-              <TextType
-                className="text-4xl font-bold"
-                text={["Web Application Security", "Penetration Tester", "Security Researcher"]}
-                typingSpeed={150}
-                pauseDuration={1500}
-                showCursor={true}
-                cursorCharacter="|"
-              />
-
-              <p className="text-ellipsis max-w-xl">
-
-                {/* Frontend Developer & Penetration Tester & Strong Understand For Backend — passionate about creating modern, responsive applications while securing them with best practices. With hands-on experience in bug hunting at hackerone I bring both development skills and a security-first mindset to every project. */}
-
-                Web Application Security Researcher & Penetration Tester with a strong full-stack development background and deep understanding of backend technologies. Passionate about building secure, modern applications and identifying real-world vulnerabilities before attackers do. With hands-on bug bounty experience on HackerOne and responsible disclosures to major organizations, I bring both an offensive security mindset and practical development knowledge to every project.
-
-              </p>
-
-
-              <div className="flex gap-2 pt-3">
-
-                <MotionButton
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                  transition={{ duration: 0.5 }}
-
-                >
-                  View My Work
-                </MotionButton>
-                <MotionButton
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <a
-                    href="/cv.pdf"
-                    download="cv.pdf"
-                  >
-                    Download CV
-                  </a>
-                </MotionButton>
-              </div>
-
-
-
-
-            </div>
-            <motion.div
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              transition={{ duration: 0.5 }}
+          {/* Hero Section */}
+          <section id="overview" className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-12 pt-20">
+            <motion.div 
+              className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 w-full max-w-6xl items-center"
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
             >
-              <img src={img} className="w-72 h-72 border-2 border-gray-400 rounded-full object-cover shadow-2xl shadow-black" alt="" />
+              <motion.div className="flex flex-col gap-4 md:gap-6" variants={itemVariants}>
+                <div>
+                  <motion.h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-2" variants={itemVariants}>
+                    Hi, I'm Yahia Khidour
+                  </motion.h1>
+                  <TextType
+                    className="text-2xl md:text-3xl lg:text-4xl font-bold text-blue-600"
+                    text={["Web Application Security", "Penetration Tester", "Security Researcher"]}
+                    typingSpeed={100}
+                    pauseDuration={2000}
+                    showCursor={true}
+                    cursorCharacter="|"
+                  />
+                </div>
+
+                <motion.p className="text-base md:text-lg text-gray-700 max-w-xl leading-relaxed" variants={itemVariants}>
+                  Web Application Security Researcher & Penetration Tester with strong full-stack development expertise. I identify real-world vulnerabilities, build secure applications, and share security insights through bug bounties and responsible disclosures.
+                </motion.p>
+
+                <motion.div className="flex flex-wrap gap-3 pt-2" variants={itemVariants}>
+                  <MotionButton
+                    whileHover={{ scale: 1.05 }}
+                   
+                    whileTap={{ scale: 0.95 }}
+                    className="bg-blue-600 hover:bg-blue-700 text-white px-6 md:px-8"
+                  >
+                    <a href="#projects">View My Work</a>
+                  </MotionButton>
+                  <MotionButton
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+className="border-2 bg-white border-red-600 text-red-600 hover:bg-red-50"                  >
+                    <a href="/yahiakhidourCV.pdf" download="yahiakhidourCV.pdf">
+                      Download CV
+                    </a>
+                  </MotionButton>
+                </motion.div>
+              </motion.div>
+
+              <motion.div
+                className="flex justify-center md:justify-end"
+                variants={itemVariants}
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="relative">
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full blur-2xl opacity-40"></div>
+                  <img 
+                    src={img} 
+                    className="w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 border-4 border-white rounded-full object-cover shadow-2xl relative z-10" 
+                    alt="Yahia Khidour" 
+                  />
+                </div>
+              </motion.div>
             </motion.div>
           </section>
 
+          {/* Skills Section */}
+          <section id="skills" className="py-20 px-4 sm:px-6 lg:px-12">
+            <motion.div 
+              className="max-w-6xl mx-auto"
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              <motion.h2 className="text-4xl md:text-5xl font-bold text-center mb-16" variants={itemVariants}>
+                Skills & Tools
+              </motion.h2>
 
-
-
-
-
-          <section id="skills" className="h-screen flex flex-col items-center justify-center gap-10 overflow-x-hidden">
-            <span className="text-4xl font-bold pb-10">Skills</span>
-
-
-            <span className="text-2xl">Security</span>
-
-
-            <div className="flex gap-32">
-              {securityLogos.map((logo, index) => (
-                <motion.div
-                  key={index}
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                  transition={{ duration: 0.5 }}
+              {/* Security Skills */}
+              <motion.div className="mb-16" variants={itemVariants}>
+                <h3 className="text-2xl md:text-3xl font-semibold text-center mb-8 text-gray-600">Security Testing</h3>
+                <motion.div 
+                  className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-6 md:gap-8"
+                  variants={containerVariants}
                 >
-                  <img src={logo.src} alt={logo.alt} className="w-20 h-20" />
+                  {securityLogos.map((logo, index) => (
+                    <motion.div
+                      key={index}
+                      className="flex justify-center"
+                      variants={itemVariants}
+                      whileHover={{ scale: 1.1, rotate: 5 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <div className="p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                        <img src={logo.src} alt={logo.alt} className="w-12 h-12 md:w-16 md:h-16" title={logo.alt} />
+                      </div>
+                    </motion.div>
+                  ))}
                 </motion.div>
-              ))}
-            </div>
+              </motion.div>
 
-
-
-
-
-            <span className="text-2xl">Development</span>
-
-            <div className="flex gap-32">
-              {developmentLogos.map((logo, index) => (
-                <motion.div
-                  key={index}
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                  transition={{ duration: 0.5 }}
+              {/* Development Skills */}
+              <motion.div variants={itemVariants}>
+                <h3 className="text-2xl md:text-3xl font-semibold text-center mb-8 text-gray-600">Development</h3>
+                <motion.div 
+                  className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-7 gap-6 md:gap-8"
+                  variants={containerVariants}
                 >
-                  <img src={logo.src} alt={logo.alt} className="w-20 h-20" />
+                  {developmentLogos.map((logo, index) => (
+                    <motion.div
+                      key={index}
+                      className="flex justify-center"
+                      variants={itemVariants}
+                      whileHover={{ scale: 1.1, rotate: 5 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <div className="p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                        <img src={logo.src} alt={logo.alt} className="w-12 h-12 md:w-16 md:h-16" title={logo.alt} />
+                      </div>
+                    </motion.div>
+                  ))}
                 </motion.div>
-              ))}
-            </div>
-
+              </motion.div>
+            </motion.div>
           </section>
 
+          {/* Projects Section */}
+          <section id="projects" className="py-20 px-4 sm:px-6 lg:px-12 bg-gradient-to-r from-blue-50 to-indigo-50">
+            <motion.div 
+              className="max-w-6xl mx-auto"
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              <motion.h2 className="text-4xl md:text-5xl font-bold text-center mb-16" variants={itemVariants}>
+                Featured Projects
+              </motion.h2>
 
-
-
-
-
-
-
-
-
-
-
-
-          <section id="projects" className="h-screen px-20 flex items-center">
-            <div className="space-y-10">
-
-              <span className="text-4xl font-bold flex justify-center">My Projects</span>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center gap-10">
+              <motion.div 
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                variants={containerVariants}
+              >
                 {ProjectsArray.map((project, index) => (
+                  <motion.div
+                    key={index}
+                    className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col h-full"
+                    variants={itemVariants}
+                    whileHover={{ y: -10 }}
+                  >
+                    <div className="relative h-48 md:h-56 overflow-hidden bg-gray-200">
+                      <img src={project.images[0]} className="w-full h-full object-cover hover:scale-110 transition-transform duration-500" alt={project.title} />
+                    </div>
 
-                  <div
-                    key={index} className="max-w-[425px] min-h-[400px] shadow-2xl rounded-2xl hover:scale-105 transition-all duration-500">
+                    <div className="p-6 flex flex-col gap-4 flex-grow">
+                      <h3 className="text-lg md:text-xl font-bold text-gray-900">{project.title}</h3>
+                      
+                      <p className="text-sm md:text-base text-gray-600 flex-grow">{project.description}</p>
 
-                    <img src={project.images[0]} className="w-full h-1/2 rounded-t-xl" alt="" />
-
-                    <div className="p-4 flex flex-col gap-5">
-                      <span className="flex justify-center text-xl font-bold">{project.title}</span>
-
-                      <div className="flex flex-wrap gap-3">
-                        {project.tech.map((tech, index) => (
-                          <span key={index} className="rounded-full p-1 bg-gray-100">{tech}</span>
+                      <div className="flex flex-wrap gap-2">
+                        {project.tech.map((tech, i) => (
+                          <span key={i} className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs md:text-sm font-medium">
+                            {tech}
+                          </span>
                         ))}
                       </div>
 
-                      <div className="flex gap-3">
+                      <div className="flex gap-4 pt-2">
+                        <motion.a
+                          href={project.livelink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2 text-blue-600 hover:text-blue-800 font-semibold"
+                          whileHover={{ x: 5 }}
+                        >
+                          <AiOutlineEye className="w-5 h-5" />
+                          Live
+                        </motion.a>
 
-                        <Link to={project.livelink}>
-                          <AiOutlineEye className="w-6 h-6" />
-                        </Link>
-
-                        <Link to={project.githublink}>
-                          <FiGithub className="w-6 h-6" />
-                        </Link>
-
+                        {project.githublink && (
+                          <motion.a
+                            href={project.githublink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2 text-gray-700 hover:text-gray-900 font-semibold"
+                            whileHover={{ x: 5 }}
+                          >
+                            <FiGithub className="w-5 h-5" />
+                            Code
+                          </motion.a>
+                        )}
                       </div>
-
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
-              </div>
-
-
-
-
-            </div>
+              </motion.div>
+            </motion.div>
           </section>
 
+          {/* Resume Section */}
+          <section id="resume" className="py-20 px-4 sm:px-6 lg:px-12">
+            <motion.div 
+              className="max-w-4xl mx-auto"
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              <motion.h2 className="text-4xl md:text-5xl font-bold text-center mb-12" variants={itemVariants}>
+                About Me
+              </motion.h2>
 
+              <motion.div className="space-y-12" variants={containerVariants}>
+                {/* Security Expertise */}
+                <motion.div className="space-y-4" variants={itemVariants}>
+                  <h3 className="text-2xl md:text-3xl font-bold text-gray-600">Security Researcher</h3>
+                  <p className="text-base md:text-lg text-gray-700 leading-relaxed">
+                    I specialize in identifying and exploiting real-world web application vulnerabilities through manual security testing, AI-assisted workflows, and bug bounty hunting. My expertise includes client-side attacks, JavaScript debugging, authentication testing, business logic vulnerabilities, API security, and OWASP Top 10 risks.
+                  </p>
+                  <div className="flex flex-wrap gap-4 pt-4">
+                    <a href="https://hackerone.com/hunterxhunter_" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 font-semibold underline">
+                      → View HackerOne Profile
+                    </a>
+                    <a href="https://support.apple.com/fr-cm/122162" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 font-semibold underline">
+                      → Apple Hall of Fame
+                    </a>
+                  </div>
+                </motion.div>
 
-
-
-
-
-          <section id="resume" className="h-screen flex flex-col items-center justify-center gap-10">
-            <span className="text-4xl font-bold">Resume</span>
-
-
-
-
-            <span className="text-3xl">Web Application Security Researcher & Penetration Tester</span>
-
-
-            <div className="flex flex-col gap-5 ">
-              <p className="max-w-[900px] text-lg">
-
-I specialize in identifying and exploiting real-world web application vulnerabilities through manual security testing, AI-assisted workflows, bug bounty hunting, and security research. My expertise includes client-side attacks, JavaScript debugging and analysis, authentication and authorization testing, business logic vulnerabilities, API security, account takeover, and the OWASP Top 10 risks.
-
-Alongside offensive security, I build automation tools and Bash scripts that streamline reconnaissance, testing, and repetitive security tasks, allowing me to work more efficiently while continuously expanding my technical skills. Combined with my full-stack development background, this enables me to understand applications from both a developer's and an attacker's perspective.
-
-              </p>
-            </div>
-
-
-            <span className="font-semibold">My Hackerone Account: <a className="font-bold" href="https://hackerone.com/hunterxhunter_">Hacker One</a></span>
-            <span className="font-semibold">Apple Hall Of Fame In Décembre 2023 Yahya Khidour (Dz): <a className="font-bold" href="https://support.apple.com/fr-cm/122162">Apple</a></span>
-
-
-
-            <span className="text-3xl">Full-Stack Development Background</span>
-
-            <div className="flex flex-col gap-5 ">
-              <p className="max-w-[900px] text-lg">
-
-                My background in full-stack development allows me to approach security from a developer's perspective. I have built modern web applications using React, Vite, TailwindCSS, Node.js, Express, and MongoDB, implementing secure authentication, authorization, rate limiting, CAPTCHA protection, security headers, and other security best practices.
-
-                Understanding both how applications are built and how they can be attacked enables me to identify vulnerabilities more effectively and communicate practical remediation to developers.
-
-              </p>
-
-
-
-
-
-
-
-
-
-            </div>
-
-
+                {/* Development Background */}
+                <motion.div className="space-y-4" variants={itemVariants}>
+                  <h3 className="text-2xl md:text-3xl font-bold text-gray-600">Full-Stack Developer</h3>
+                  <p className="text-base md:text-lg text-gray-700 leading-relaxed">
+                    My full-stack development background enables me to approach security from a developer's perspective. I build secure web applications using React, Vite, TailwindCSS, Node.js, Express, and MongoDB, implementing best practices for authentication, authorization, rate limiting, and security headers. This unique perspective allows me to identify vulnerabilities more effectively and communicate practical solutions to development teams.
+                  </p>
+                </motion.div>
+              </motion.div>
+            </motion.div>
           </section>
 
+          {/* Contact Section */}
+          <section id="contact" className="py-20 px-4 sm:px-6 lg:px-12 bg-gradient-to-r from-blue-200 to-indigo-600">
+            <motion.div 
+              className="max-w-4xl mx-auto text-center"
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              <motion.h2 className="text-4xl md:text-5xl font-bold text-white mb-8" variants={itemVariants}>
+                Let's Connect
+              </motion.h2>
+
+              <motion.p className="text-lg md:text-xl text-blue-100 mb-12 max-w-2xl mx-auto" variants={itemVariants}>
+Let's connect! Whether you have a job opportunity, a security project, or just want to talk about cybersecurity, you can reach me through any of the platforms below.              </motion.p>
+
+              <motion.div className="flex justify-center gap-6 md:gap-8 flex-wrap" variants={containerVariants}>
+                <motion.a
+                  href="https://www.linkedin.com/in/yahia-khidour-9254a0256/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 bg-white rounded-full hover:bg-blue-50 transition-colors"
+                  whileHover={{ scale: 1.15 }}
+                  whileTap={{ scale: 0.95 }}
+                  title="LinkedIn"
+                >
+                  <SlSocialLinkedin className="w-6 h-6 text-blue-600" />
+                </motion.a>
+
+                <motion.a
+                  href="https://github.com/idkwhoiamx999/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 bg-white rounded-full hover:bg-blue-50 transition-colors"
+                  whileHover={{ scale: 1.15 }}
+                  whileTap={{ scale: 0.95 }}
+                  title="GitHub"
+                >
+                  <FiGithub className="w-6 h-6 text-blue-600" />
+                </motion.a>
+
+                <motion.a
+                  href="https://x.com/idkwhoiamx999"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 bg-white rounded-full hover:bg-blue-50 transition-colors"
+                  whileHover={{ scale: 1.15 }}
+                  whileTap={{ scale: 0.95 }}
+                  title="Twitter"
+                >
+                  <FiTwitter className="w-6 h-6 text-blue-600" />
+                </motion.a>
 
 
 
 
 
-
-          <section id="contact" className="h-screen flex flex-col items-center justify-center gap-6">
-            <span className="text-4xl font-bold">Contact</span>
-
-
-
-
-
-        <div className="flex gap-4">
-          
-{/* <a href="tel:+213556042818" className="flex items-center gap-2">
-  <FiPhone className="w-6 h-6"/>
-</a> */}
-
-
-          <Link to='https://www.linkedin.com/in/yahia-khidour-9254a0256/'>
-            <SlSocialLinkedin className="w-6 h-6"/>
-          </Link>
-
-
-          <Link to='https://github.com/idkwhoiamx999/'>
-            <FiGithub className="w-6 h-6"/>
-          </Link>
-
-          <Link to='https://x.com/idkwhoiamx999'>
-            <FiTwitter className="w-6 h-6" />
-          </Link>
-
-          <Link to='https://hackerone.com/hunterxhunter_?type=user'>
-            <SiHackerone className="w-6 h-6"/>
-          </Link>
+                <motion.a
+                  href="mailto:yahiakhidour9@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 bg-white rounded-full hover:bg-blue-50 transition-colors"
+                  whileHover={{ scale: 1.15 }}
+                  whileTap={{ scale: 0.95 }}
+                  title="Email"
+                >
+                  <MdOutlineEmail className="w-6 h-6 text-blue-600" />
+                </motion.a>
 
 
 
+              </motion.div>
 
-
+              <motion.p className="text-blue-100 text-sm md:text-base mt-12" variants={itemVariants}>
+                © 2024 Yahia Khidour. All rights reserved.
+              </motion.p>
+            </motion.div>
+          </section>
         </div>
-
-
-
-
-            {/* <div>
-              <Contact />
-            </div> */}
-
-
-          </section>
-
-
-
-
-        </div>
-
       </div>
     </PageWrapper>
   )
