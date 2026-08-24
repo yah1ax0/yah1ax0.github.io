@@ -19,7 +19,7 @@ html {
 
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: white;
+  background-color: rgb(247, 245, 245);
   width: 100%;
   @apply antialiased;
 }
@@ -148,4 +148,108 @@ a {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.blog-content {
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.blog-content h1 {
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    font-size: 2.25rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+}
+
+.blog-content h2 {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.blog-content h3 {
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.35rem;
+    font-weight: 600;
+}
+
+.blog-content p {
+    margin: 1.25rem 0;
+    color: #374151;
+}
+
+.blog-content strong {
+    font-weight: 700;
+    color: #111827;
+}
+
+.blog-content ul {
+    margin: 1.25rem 0;
+    padding-left: 1.5rem;
+    list-style-type: disc;
+}
+
+.blog-content ol {
+    margin: 1.25rem 0;
+    padding-left: 1.5rem;
+    list-style-type: decimal;
+}
+
+.blog-content li {
+    margin: 0.5rem 0;
+    color: #374151;
+}
+
+.blog-content blockquote {
+    margin: 2rem 0;
+    padding: 1rem 1.5rem;
+    border-left: 4px solid #111827;
+    background: #f9fafb;
+    color: #4b5563;
+    font-style: italic;
+}
+
+.blog-content code {
+    padding: 0.15rem 0.35rem;
+    border-radius: 0.35rem;
+    background: #f3f4f6;
+    font-family: monospace;
+    font-size: 0.9em;
+}
+
+.blog-content pre {
+    margin: 2rem 0;
+    padding: 1.25rem;
+    overflow-x: auto;
+    border-radius: 0.75rem;
+    background: #111827;
+    color: #f9fafb;
+}
+
+.blog-content pre code {
+    padding: 0;
+    background: transparent;
+    color: inherit;
+}
+
+.blog-content a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.blog-content hr {
+    margin: 3rem 0;
+    border: 0;
+    border-top: 1px solid #e5e7eb;
+}
+
+.blog-content img {
+    margin: 2rem 0;
+    max-width: 100%;
+    border-radius: 0.75rem;
 }

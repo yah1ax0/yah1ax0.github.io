@@ -1,128 +1,100 @@
-import { useState } from "react"
-import { NavigationMenu, NavigationMenuList, NavigationMenuItem, NavigationMenuLink } from "@/components/ui/navigation-menu"
-import { motion } from "framer-motion"
-import { SlSocialLinkedin } from "react-icons/sl"
-import { SiHackerone } from "react-icons/si"
-import { FiGithub, FiTwitter, FiMenu, FiX } from "react-icons/fi"
+
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { FiMenu, FiX } from "react-icons/fi";
 
 const Navbar = () => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { label: "Overview", href: "#overview" },
-    { label: "Skills", href: "#skills" },
-    { label: "Projects", href: "#projects" },
-    { label: "Resume", href: "#resume" },
-    { label: "Contact", href: "#contact" },
-  ]
-
-  const socialLinks = [
-    { icon: SlSocialLinkedin, href: "https://www.linkedin.com/in/yahia-khidour-9254a0256/", label: "LinkedIn" },
-    { icon: FiGithub, href: "https://github.com/idkwhoiamx999/", label: "GitHub" },
-    { icon: FiTwitter, href: "https://x.com/idkwhoiamx999", label: "Twitter" },
-    { icon: SiHackerone, href: "https://hackerone.com/hunterxhunter_?type=user", label: "HackerOne" },
-  ]
+    { label: "Home", href: "/" },
+    { label: "About", href: "/about" },
+    { label: "Blog", href: "/blog" },
+    // { label: "Projects", href: "/projects" },
+  ];
 
   return (
-    <nav className="fixed w-full top-0 z-50">
-      <div className="backdrop-blur-md bg-white/80 border-b border-gray-200">
-        <div className="max-w-7xl mx-auto flex items-center justify-between h-16 px-4 sm:px-6 lg:px-12">
-          {/* Logo */}
-          <a href="/" className="text-2xl font-bold text-blue-600 hover:text-blue-700 transition">
-            Yahia Kh
-          </a>
+    <nav>
+      <div className="mx-auto px-4 sm:px-6 lg:px-8 bg-gray-100">
+        <div className="mx-auto mt-4 max-w-6xl">
 
-          {/* Desktop Navigation */}
-          <NavigationMenu className="hidden md:block">
-            <NavigationMenuList className="flex gap-2">
-              {navLinks.map((link) => (
-                <NavigationMenuItem key={link.label}>
-                  <NavigationMenuLink
-                    href={link.href}
-                    className="px-4 py-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition font-medium"
-                  >
-                    {link.label}
-                  </NavigationMenuLink>
-                </NavigationMenuItem>
-              ))}
-            </NavigationMenuList>
-          </NavigationMenu>
+          <div className="flex h-16 items-center justify-between rounded-2xl border border-gray-200/70 bg-gray-200 px-5 shadow-sm backdrop-blur-xl sm:px-7">
 
-          {/* Social Links - Desktop */}
-          <div className="hidden md:flex gap-4">
-            {socialLinks.map((social) => {
-              const Icon = social.icon
-              return (
-                <motion.a
-                  key={social.label}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-blue-600 transition"
-                  whileHover={{ scale: 1.2 }}
-                  whileTap={{ scale: 0.95 }}
-                  title={social.label}
-                >
-                  <Icon className="w-5 h-5" />
-                </motion.a>
-              )
-            })}
-          </div>
+            {/* Logo */}
+            <a
+              href="/"
+              className="text-2xl font-bold tracking-tight text-gray-900 transition hover:text-blue-600"
+            >
+              Yah<span className="text-blue-600">1a</span>
+            </a>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-gray-700 hover:text-blue-600 transition"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {mobileMenuOpen ? <FiX className="w-6 h-6" /> : <FiMenu className="w-6 h-6" />}
-          </button>
-        </div>
 
-        {/* Mobile Navigation */}
-        {mobileMenuOpen && (
-          <motion.div
-            className="md:hidden border-t border-gray-200 bg-white"
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-          >
-            <div className="px-4 py-4 space-y-3">
+            {/* Desktop Navigation */}
+            <div className="hidden items-center gap-3 md:flex">
+
               {navLinks.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
-                  className="block px-4 py-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition font-medium"
-                  onClick={() => setMobileMenuOpen(false)}
+                  className="rounded-xl border border-gray-300 bg-white/60 px-7 py-2.5 text-sm font-semibold text-gray-600 shadow-sm transition-all hover:border-blue-200 hover:bg-blue-50 hover:text-blue-600 hover:shadow"
                 >
                   {link.label}
                 </a>
               ))}
 
-              {/* Mobile Social Links */}
-              <div className="pt-4 border-t border-gray-200 flex gap-4">
-                {socialLinks.map((social) => {
-                  const Icon = social.icon
-                  return (
-                    <a
-                      key={social.label}
-                      href={social.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-gray-600 hover:text-blue-600 transition"
-                      title={social.label}
-                    >
-                      <Icon className="w-5 h-5" />
-                    </a>
-                  )
-                })}
-              </div>
             </div>
-          </motion.div>
-        )}
+
+
+            {/* Mobile Menu Button */}
+            <button
+              type="button"
+              className="rounded-xl p-2.5 text-gray-600 transition hover:bg-gray-100 hover:text-blue-600 md:hidden"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Toggle menu"
+              aria-expanded={mobileMenuOpen}
+            >
+              {mobileMenuOpen ? (
+                <FiX className="h-6 w-6" />
+              ) : (
+                <FiMenu className="h-6 w-6" />
+              )}
+            </button>
+
+          </div>
+
+
+          {/* Mobile Menu */}
+          <AnimatePresence>
+            {mobileMenuOpen && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.2 }}
+                className="mt-2 overflow-hidden rounded-2xl border border-gray-200/70 bg-white/95 shadow-lg backdrop-blur-xl md:hidden"
+              >
+                <div className="space-y-1 p-3">
+
+                  {navLinks.map((link) => (
+                    <a
+                      key={link.label}
+                      href={link.href}
+                      className="block rounded-xl px-4 py-3 text-sm font-medium text-gray-700 transition hover:bg-blue-50 hover:text-blue-600"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {link.label}
+                    </a>
+                  ))}
+
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+
+        </div>
       </div>
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
