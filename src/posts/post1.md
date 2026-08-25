@@ -3,30 +3,26 @@
 title: "When Missing Rate Limiting Leads to a Critical Authentication Finding: A Real-World Case Study"
 date: "2026-07-06"
 description: "How an account enumeration issue combined with missing authentication rate limiting led to a critical security finding."
-image: "/images/rate-limiting.png"
+# image: "/images/rate-limiting.png"
 ----------------------------------
 
-# When Missing Rate Limiting Leads to a Critical Authentication Finding
 
-Hey! It's been quite a while since my last article, but I'm excited to start publishing consistently again.
+Hey It’s been quite a while since my last article, but I’m excited to start publishing consistently again, covering web application security, bug bounty research, CTFs, penetration testing, and the lessons I learn along the way.
 
-I'll be covering web application security, bug bounty research, CTFs, penetration testing, and the lessons I learn along the way.
+Let’s start with one of the most interesting authentication issues I’ve ever reported.
 
-Let's start with one of the most interesting authentication issues I've ever reported.
+![img1](/public/images/post1_1.jpg)
 
-![Authentication testing](/images/image1-post1.jpeg)
-
-## Initial Discovery
 
 So, let's talk about the critical vulnerability I found in what we'll call **example.com**.
 
-I started by testing the login functionality of the main application.
 
-Since I had only discovered the login page about 10 minutes earlier, I simply began interacting with it, clicking through the functionality and looking for anything interesting.
+I started by testing the login functionality of the main application. Since I had only discovered the login page about 10 minutes earlier, I simply began interacting with it, clicking through the functionality and looking for anything interesting.
 
-I created a new account and logged in successfully.
 
-My first test was to enter a valid email address with an incorrect password.
+
+I created a new account and logged in successfully. My first test was to enter a valid email address with an incorrect password.
+
 
 - Email: `hunterxhunter_@wearehackerone.com`
 - Password: `1234567`
@@ -39,7 +35,7 @@ That immediately caught my attention.
 
 Instead of stopping there, I started wondering:
 
-> What happens if the email doesn't exist?
+**What happens if the email doesn't exist?**
 
 To test this, I slightly modified the email address by adding a few extra characters while keeping the same password.
 
@@ -50,19 +46,10 @@ This time, the application responded with:
 
 > This email is not registered.
 
-At this point, I confirmed that the login endpoint returned different error messages depending on whether the supplied email address existed.
+At this point, I confirmed that the login endpoint returned different error messages depending on whether the supplied email address existed, This allowed an attacker to enumerate valid accounts simply by observing the authentication responses.
 
-This allowed an attacker to enumerate valid accounts simply by observing the authentication responses.
+The root cause of this issue was improper backend authentication error handling. Instead of returning a generic response such as “Invalid email or password” for all failed login attempts, the backend disclosed whether an email address was registered, resulting in an account enumeration vulnerability.
 
-## Account Enumeration
-
-The root cause of this issue was improper backend authentication error handling.
-
-Instead of returning a generic response such as:
-
-> Invalid email or password.
-
-for all failed login attempts, the backend disclosed whether an email address was registered.
 
 ### Vulnerable backend logic
 
@@ -178,11 +165,13 @@ This indicated that the issue was not necessarily isolated to a single login pag
 
 At this point, I had gathered enough evidence to document my findings and submit the report to the security team.
 
-![Initial report](/images/image1-post1.jpeg)
+![Initial report](/public/images/post1_2.jpeg)
 
 > The report was triaged very quickly. It was one of my favorite programs to work with.
 
 The report was initially classified as **Medium** severity.
+
+![img3](/public/images/post1_3.jpeg)
 
 Based on the evidence I had collected and the potential impact, I believed the issue warranted further investigation.
 
@@ -202,15 +191,15 @@ https://admin-portal-example.com/login
 
 And there it was.
 
-Another authentication endpoint exhibiting the vulnerable behavior.
+admin authentication endpoint exhibiting the vulnerable behavior.
 
 I immediately updated my report with the additional findings and provided the security team with the new evidence.
 
 After reviewing the expanded impact, the security team upgraded the severity from **Medium** to **Critical**.
 
-![Severity upgrade](/images/image3-post1.jpeg)
+![Severity upgrade](/public/images/post1_3.jpeg)
 
-> Finally. ❤️
+> Finally. 
 
 ## What I Learned
 
@@ -234,7 +223,7 @@ That question is often what turns an interesting observation into a meaningful s
 
 ## Conclusion
 
-And that's the end of this write-up!
+that's the end of this write-up!
 
 I hope you enjoyed reading it and found it useful.
 
@@ -244,4 +233,4 @@ If you enjoyed this article, feel free to share it and tag me on X.
 
 I'd love to hear your thoughts, answer your questions, or discuss different approaches to the findings.
 
-Thanks for reading, and I'll see you in the next write-up. 🚀
+Thanks for reading, and I'll see you in the next write-up. 
