@@ -11,7 +11,7 @@ Hey It’s been quite a while since my last article, but I’m excited to start 
 
 Let’s start with one of the most interesting authentication issues I’ve ever reported.
 
-![img1](/public/images/post1_1.jpg)
+![img1](/images/post1_1.jpg)
 
 
 So, let's talk about the critical vulnerability I found in what we'll call **example.com**.
@@ -165,13 +165,13 @@ This indicated that the issue was not necessarily isolated to a single login pag
 
 At this point, I had gathered enough evidence to document my findings and submit the report to the security team.
 
-![Initial report](/public/images/post1_2.jpeg)
+![Initial report](/images/post1_2.jpeg)
 
 > The report was triaged very quickly. It was one of my favorite programs to work with.
 
 The report was initially classified as **Medium** severity.
 
-![img3](/public/images/post1_3.jpeg)
+![img3](/images/post1_3.jpeg)
 
 Based on the evidence I had collected and the potential impact, I believed the issue warranted further investigation.
 
@@ -197,7 +197,7 @@ I immediately updated my report with the additional findings and provided the se
 
 After reviewing the expanded impact, the security team upgraded the severity from **Medium** to **Critical**.
 
-![Severity upgrade](/public/images/post1_3.jpeg)
+![Severity upgrade](/images/post1_3.jpeg)
 
 > Finally. 
 
