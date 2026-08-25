@@ -1,7 +1,7 @@
 ---
 
 title: "When Missing Rate Limiting Leads to a Critical Authentication Finding: A Real-World Case Study"
-date: "2026-07-06"
+date: "2026-06-27"
 description: "How an account enumeration issue combined with missing authentication rate limiting led to a critical security finding."
 # image: "/images/rate-limiting.png"
 ----------------------------------
@@ -39,7 +39,7 @@ Instead of stopping there, I started wondering:
 
 To test this, I slightly modified the email address by adding a few extra characters while keeping the same password.
 
-- Email: `hunterxhunter123_@wearehackerone.com` |
+- Email: `hunterxhunter123_@wearehackerone.com`
 - Password: `1234567`
 
 This time, the application responded with:
@@ -197,7 +197,7 @@ I immediately updated my report with the additional findings and provided the se
 
 After reviewing the expanded impact, the security team upgraded the severity from **Medium** to **Critical**.
 
-![Severity upgrade](/images/post1_3.jpeg)
+![img4](/images/post1_4.jpeg)
 
 > Finally. 
 
