@@ -14,14 +14,10 @@ function About() {
           <div className="mt-12 space-y-10">
             {/* Me */}
             <section>
-              <h2 className="text-2xl font-bold text-gray-900">
-                … Me 🧑‍💻
-              </h2>
 
-      <br />
 
 <span className="text-lg">
-I'm Yahia, a Web Application Penetration Tester and Security Researcher with a strong Full-Stack Development background.
+Hey, I'm Yahia a Web Application Penetration Tester and Security Researcher with a strong Full-Stack Development background.
 I focus on web and API security, covering both client-side and server-side attack surfaces.
 My experience includes vulnerability research, bug bounty hunting, CTFs, JavaScript analysis, and manual penetration testing.
 I'm also interested in AI-assisted security workflows, automation, and emerging web attack techniques.
