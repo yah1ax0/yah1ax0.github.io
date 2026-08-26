@@ -93,11 +93,9 @@ function Home() {
                   </div>
 
                   <p className="mt-6 max-w-2xl text-base md:text-lg leading-relaxed text-gray-600">
-                    Web Application Security Researcher & Penetration Tester
-                    with strong full-stack development expertise. I identify
-                    real-world vulnerabilities, build secure applications,
-                    and share security insights through bug bounties and
-                    responsible disclosures.
+                  
+Explore my journey through cybersecurity and development. Here you'll find my projects, security research, write-ups, and articles covering the things I build, break, and learn along the way.
+
                   </p>
 
                   {/* Socials */}
